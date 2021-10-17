@@ -10,7 +10,8 @@ h1{
 }
 .ctn_img_btn{
     display: flex;
-    justify-content: space-around;    
+    justify-content: space-around;  
+    min-height: 60vh;  
 }
 h2{
     font-size: 1rem;
@@ -27,12 +28,12 @@ h2{
 
 .button_style{
     background: transparent;
-    border-radius: 15px;
-    padding: 0.5rem 1.3rem;    
+    border-radius: 15px;   
     margin-right: 0.5rem; 
     margin-bottom: 0.5rem;   
-    border: 1px solid #bdcfef;
-    color: #bdcfef;
+    border: 1px solid #464f5f;
+    color: #464f5f;
+    padding: 0.5rem 1.3rem; 
 }
 .button_style:hover{  
     border: 1px solid rgb(82, 126, 201);
@@ -43,18 +44,68 @@ h2{
     border: 1px solid #27509c;
     color: #fff;
 }
+.img_container, img{
+    width: 480px;
+    height: 480px;
+}
 .img_container{   
-    width: 45%;
     display: flex;
     justify-content: center;
 }
+
 img{
     position: absolute;
-    width: 40%;
 }
-.img_backgrounds{
-    z-index: 0;
+
+/* download - random buton*/
+.ctn_ramDown{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
 }
-.img_accessories, .img_eyes, .img_mouth{
-    z-index: 1;
+.btn_ramDown{
+    background-color: #fff;
+    border: 1px solid rgb(228, 228, 228);
+    font-weight: bold;
+    padding: 0.8rem 1.5rem; 
 }
+
+
+
+/* Medium devices (tablets)*/
+@media (max-width: 992px) {
+    
+    .ctn_ramDown{
+        width: 100%;
+    }
+    .ctn_img_btn{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button_container{
+        width: 90%;
+    }
+    h2{
+        font-size: 1.3rem;
+    }
+   .button_style{
+       font-size: 1rem;
+   }
+}
+
+/* Small devices (landscape /phones,)*/
+@media (max-width: 767px) {
+    .container{
+        padding: 0.5rem;
+    }
+    
+   .img_container, img{
+    width: 324px;
+    height: 324px;
+    }
+ }
+
+
+
