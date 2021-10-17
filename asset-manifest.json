@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/alpaca_generator/static/css/main.2092db80.chunk.css",
+    "main.css": "/alpaca_generator/static/css/main.aab68c76.chunk.css",
     "main.js": "/alpaca_generator/static/js/main.7a98f0f1.chunk.js",
     "main.js.map": "/alpaca_generator/static/js/main.7a98f0f1.chunk.js.map",
     "runtime-main.js": "/alpaca_generator/static/js/runtime-main.df0a8be3.js",
@@ -10,14 +10,14 @@
     "static/js/3.08efcac1.chunk.js": "/alpaca_generator/static/js/3.08efcac1.chunk.js",
     "static/js/3.08efcac1.chunk.js.map": "/alpaca_generator/static/js/3.08efcac1.chunk.js.map",
     "index.html": "/alpaca_generator/index.html",
-    "static/css/main.2092db80.chunk.css.map": "/alpaca_generator/static/css/main.2092db80.chunk.css.map",
+    "static/css/main.aab68c76.chunk.css.map": "/alpaca_generator/static/css/main.aab68c76.chunk.css.map",
     "static/js/2.7cd4b89e.chunk.js.LICENSE.txt": "/alpaca_generator/static/js/2.7cd4b89e.chunk.js.LICENSE.txt",
     "static/media/headphone.png": "/alpaca_generator/static/media/headphone.71c096d5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.df0a8be3.js",
     "static/js/2.7cd4b89e.chunk.js",
-    "static/css/main.2092db80.chunk.css",
+    "static/css/main.aab68c76.chunk.css",
     "static/js/main.7a98f0f1.chunk.js"
   ]
 }
