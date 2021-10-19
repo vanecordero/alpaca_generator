@@ -1,12 +1,12 @@
-import React from "react";
-import Button from "./button";
-import { useState, useRef } from "react";
+import React,{ useState, useRef, useContext } from "react";
 import { Alpaca } from "service/Alpaca";
 import sty from './containerBtn.module.css';
-
+import {AlpacaContext} from "context/alpacaContext";
+import CreateImage from "./images/createImage";
+import SectionButtons from "./sections/sectionbuttons";
+import HeadButton from "./headBtn";
 
 export default function Container(){
-    const [accesory] = useState( Object.keys(Alpaca))
     const [style, setstyle] = useState(Object.keys(Alpaca["backgrounds"]))
     const [typeUrl, setType] = useState("backgrounds")
     const [styles, setstyles] = useState({        
@@ -20,89 +20,52 @@ export default function Container(){
         "accessories":"headphone.png",
         "eyes":"default.png"
     })
-
-    
+    const {imgStyles, setImgStyles} = useContext(AlpacaContext)
     const image = useRef(null)
-      function hadleClick(e, value) {
-          setstyle(Object.keys(Alpaca[value]))
-          setType(value)
-      }
+
+    function hadleClick(val) {
+         setstyle(Object.keys(Alpaca[val.target.value]))
+          setType(val.target.value)
+    }
       
-    function changeImage(e, value) {
-       setstyles({...styles, [typeUrl]: Alpaca[typeUrl][value]})
+    function changeImage(val) {
+        setImgStyles({...imgStyles, [typeUrl]: Alpaca[typeUrl][val.target.value]})
     }   
 
-    const downloadImg=()=>{
-        var canvas = document.createElement("canvas")
-        var ctx = canvas.getContext("2d")
-        canvas.width ="720"
-        canvas.height= "720"
-        let c = image.current.children
-        for (let i = 0; i < c.length; i++) {
-            ctx.drawImage(c[i], 0, 0)
-        }
-        const link = document.createElement('a')
-        link.download = 'Alpaca.png'
-        link.href = canvas.toDataURL()
-        link.click()
-    }
-      
-    const randomImg=()=>{
-        let newStyle = { }
-        accesory.map(values=>{
-            let vals = Object.values(Alpaca[values])
-            let nameImg = vals[Math.floor(Math.random()*vals.length)]
-            newStyle[values] = nameImg
-        })
-        setstyles(newStyle)        
-    }
-
     
-   return(  
+   return(
+    
     <div className={sty.container}>
-       <h1>ALPACA GENERATOR</h1>
-       <div className={sty.ctn_ramDown}>
-           <button type="button" onClick={randomImg} className=
-            {sty.btn_ramDown}>🔀 Random</button>
-
-            <button type="button" onClick={downloadImg} className=
-            {sty.btn_ramDown}>⬇️ Download</button>
-        </div>
+       
+            <HeadButton
+            title="ALPACA GENERATOR"
+            className={[sty.ctn_ramDown, sty.btn_ramDown]}
+            objec={Object.keys(Alpaca)}
+            images={image}
+            />
         <div className={sty.ctn_img_btn}>
-        <div className={sty.img_container} ref={image}> 
-                {
-                    Object.keys(Alpaca).map(elem=>{
-                        return <img key={"key_"+elem}
-                        src={require(`img/${elem}/${styles[elem]}`).default}
-                        alt={elem}
-                        className={sty["img_"+elem]}
-                        />
-                    })
-                }
-        </div>                    
-        <div className={sty.button_container}>
-            
-        <h2>ACCESSORIZE THE ALPACA'S</h2> 
-            <div> 
-                { 
-                accesory.map(value=>{
-                    return <Button key={"btn_"+value} value={value} onClick={(e)=>{hadleClick(e, value)}} className={`${sty.button_style} ${typeUrl===value? sty.btn_active: null}`}/>
-                })           
-                }
-            </div>
-            <h2>STYLE</h2> 
-            <div>
-             
-                {
-                style.map(value=>{
-                return <Button key={"btn-style_"+value} value={value} onClick={e =>{changeImage(e,value)}} className={`${sty.button_style} ${styles[typeUrl]===value+".png"? sty.btn_active: null}`}/>
-                })  
-                }
-                </div>
-        </div>
 
-    
+            <div className={sty.img_container} ref={image}> 
+                <CreateImage/> 
+            </div>  
+
+            <div className={sty.button_container}>
+                <SectionButtons 
+                    title={"ACCESSORIZE THE ALPACA'S"}
+                    objec={Object.keys(Alpaca)}
+                    typeUrl={typeUrl}
+                    actionF={hadleClick}
+                />  
+                <SectionButtons 
+                    title={"STYLE"}
+                    objec={style}
+                    typeUrl={typeUrl}
+                    actionF={changeImage}
+                /> 
+            </div>
+        
         </div>
-     </div>
+     </div>     
+     
     )
 } 

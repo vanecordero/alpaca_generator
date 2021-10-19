@@ -1,0 +1,48 @@
+
+.button_style{
+    background: transparent;
+    border-radius: 15px;   
+    margin-right: 0.5rem; 
+    margin-bottom: 0.5rem;   
+    border: 1px solid #464f5f;
+    color: #464f5f;
+    padding: 0.5rem 1.3rem; 
+}
+.button_style:hover{  
+    border: 1px solid rgb(82, 126, 201);
+    color: rgb(82, 126, 201);
+}
+.button_style.btn_active{  
+    background-color: #27509c;
+    border: 1px solid #27509c;
+    color: #fff;
+}
+
+/* download - random buton*/
+.ctn_ramDown{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+.btn_ramDown{
+    background-color: #fff;
+    border: 1px solid rgb(228, 228, 228);
+    font-weight: bold;
+    padding: 0.8rem 1.5rem; 
+}
+
+
+
+/* Medium devices (tablets)*/
+@media (max-width: 992px) {
+    
+   .button_style{
+       font-size: 1rem;
+   }
+}
+
+
+
+
+
