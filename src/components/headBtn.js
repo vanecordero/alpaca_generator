@@ -26,7 +26,7 @@ export default function HeadButton({title, className, objec, images}){
         objec.map(values=>{
             let vals = Object.values(Alpaca[values])
             let nameImg = vals[Math.floor(Math.random()*vals.length)]
-            newStyle[values] = nameImg
+          return  newStyle[values] = nameImg
         })
         setImgStyles(newStyle)        
     }

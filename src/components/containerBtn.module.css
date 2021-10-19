@@ -1,60 +1,26 @@
 
-
+h1{
+    text-align: center;
+}
 .container{
     min-height: 100vh;
     background-color: #eeeeee;
     padding: 1rem 2rem;
 }
-h1{
-    text-align: center;
-}
+
 .ctn_img_btn{
     display: flex;
     justify-content: space-around;  
     min-height: 60vh;  
 }
-h2{
-    font-size: 1rem;
-}
-.button_container{
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-}
-.button_container>div{
-    display: flex;
-    flex-wrap: wrap;
-}
 
-.button_style{
-    background: transparent;
-    border-radius: 15px;   
-    margin-right: 0.5rem; 
-    margin-bottom: 0.5rem;   
-    border: 1px solid #464f5f;
-    color: #464f5f;
-    padding: 0.5rem 1.3rem; 
-}
-.button_style:hover{  
-    border: 1px solid rgb(82, 126, 201);
-    color: rgb(82, 126, 201);
-}
-.button_style.btn_active{  
-    background-color: #27509c;
-    border: 1px solid #27509c;
-    color: #fff;
-}
-.img_container, img{
+.img_container{
     width: 480px;
     height: 480px;
 }
 .img_container{   
     display: flex;
     justify-content: center;
-}
-
-img{
-    position: absolute;
 }
 
 /* download - random buton*/
@@ -72,7 +38,6 @@ img{
 }
 
 
-
 /* Medium devices (tablets)*/
 @media (max-width: 992px) {
     
@@ -87,12 +52,7 @@ img{
     .button_container{
         width: 90%;
     }
-    h2{
-        font-size: 1.3rem;
-    }
-   .button_style{
-       font-size: 1rem;
-   }
+    
 }
 
 /* Small devices (landscape /phones,)*/
@@ -104,12 +64,9 @@ img{
         margin-top: 0.5rem;
         margin-bottom: 0.5rem;
     }
-   .img_container, img{
+   .img_container{
     width: 200px;
     height: 200px;
-    }
-    h2{
-        margin-bottom: 0.5rem;
     }
  }
 

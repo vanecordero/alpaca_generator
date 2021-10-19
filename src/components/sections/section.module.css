@@ -1,4 +1,6 @@
-
+h2{
+    font-size: 1rem;
+}
 .button_style{
     background: transparent;
     border-radius: 15px;   
@@ -12,7 +14,7 @@
     border: 1px solid rgb(82, 126, 201);
     color: rgb(82, 126, 201);
 }
-.button_style.btn_active{  
+.button_style.btn_active,.button_style:focus{  
     background-color: #27509c;
     border: 1px solid #27509c;
     color: #fff;
@@ -33,16 +35,27 @@
 }
 
 
-
 /* Medium devices (tablets)*/
 @media (max-width: 992px) {
     
    .button_style{
        font-size: 1rem;
    }
+   h2{
+    font-size: 1.3rem;
 }
 
+.button_style{
+    font-size: 1rem;
+}
+}
 
+/* Small devices (landscape /phones,)*/
+@media (max-width: 767px) {
+    h2{
+        margin-bottom: 0.5rem;
+    }
+ }
 
 
 

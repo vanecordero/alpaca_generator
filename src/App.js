@@ -1,6 +1,6 @@
 
 import Container from './components/containerBtn';
-import AlpacaContext from "context/alpacaContext";
+import {AlpacaContext} from "context/alpacaContext";
 
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <>
     <AlpacaContext>  
       <Container/>
-    </AlpacaContext> 
+   </AlpacaContext> 
     </>
   );
 }
